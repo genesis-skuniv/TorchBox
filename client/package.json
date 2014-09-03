@@ -1,4 +1,24 @@
 {
-	"name": "Torchbox Client",
-	"main": "index.html"
+  "main": "index.html",
+  "name": "torchbox-client",
+  "description": "Torchbox messenger client",
+  "single-instance": true,
+  "version": "0.1.0",
+  "window": {
+    "title": "Torchbox",
+    "icon": "res/icon.png",
+    "toolbar": false,
+    "frame": true,
+    "width": 300,
+    "height": 500,
+    "position": "null",
+    "min_width": 300,
+	"max_width": 300,
+    "min_height": 300,
+	"resizable":true
+  },
+  "webkit": {
+    "plugin": true
+  }
 }
+// https://github.com/rogerwang/node-webkit/wiki/Manifest-format
