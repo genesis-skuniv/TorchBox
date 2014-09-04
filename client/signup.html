@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login Page</title>
+	<title>Sign up</title>
 	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 	<script>
 		$(document).ready(function (){
 			$('button').click(function(){
-				location.replace("/signup"); 
+				location.replace("/"); 
 			});
-		});
+		});	
 	</script>
-</head
+</head>
 <body>
-	<h1>Login Page</h1>
+	<h1>Sign up Page</h1>
 	<hr />
 	<form method = "POST">
 		<table>
@@ -25,8 +25,8 @@
 				<td><input type="password" name="password" /></td>
 			</tr>	
 		</table>
-		<input type="submit" name = "" />
+		<input type="submit" name = ""  value="sign up"/>
 	</form>
-	<button id ="signup">Sign up</button>
+	<button id ="Cancel">Cancel</button>
 </body>
 </html>
