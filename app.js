@@ -29,7 +29,7 @@ app.get('/', function (request, response) {
     
     if(request.cookies.auth){//인증된 쿠키가 있다면 채팅
         //socket.io 부분
-        fs.readFile('ChatPage.html',function (error, data){
+        fs.readFile('index.html',function (error, data){
             response.writeHead(200, {'Content-Type' : 'text/html'});
             response.end(data);
         });
