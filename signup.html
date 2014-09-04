@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign up</title>
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script>
+		$(document).ready(function (){
+			$('button').click(function(){
+				location.replace("/"); 
+			});
+		});	
+	</script>
+</head>
+<body>
+	<h1>Sign up Page</h1>
+	<hr />
+	<form method = "POST">
+		<table>
+			<tr>
+				<td><label>Username</label></td>
+				<td><input type="text" name = "id" /></td>
+			</tr>
+			<tr>
+				<td><label>Password</label></td>
+				<td><input type="password" name="password" /></td>
+			</tr>	
+		</table>
+		<input type="submit" name = ""  value="sign up"/>
+	</form>
+	<button id ="Cancel">Cancel</button>
+</body>
+</html>

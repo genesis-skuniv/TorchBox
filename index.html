@@ -1,0 +1,76 @@
+<html>
+<head>
+	<title>Chat</title>
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+	$(document).ready(function (){
+		var Author;
+		$.get('/loadauthor', function (data){
+			Author=data;
+		});
+		
+		var socket = io.connect();
+		
+		//각 db에서 가져온 row에 대하여 출력
+		//이거 안하면 동기화 된다. 왜지?
+		$.get('/load', function (data){
+			$(data).each( function(){
+				var output = '';
+				output += '<li>';
+				output += '	<h3>'+this.author + '</h3>';
+				output += ' <p>'+this.contents +'</p>';
+				output += '	<p>'+this.date +'</p>';
+				output += '</li>';
+				$(output).prependTo('#content');
+			});
+		});
+	
+		socket.on('message',function (data){
+			//location.reload();//새로고침시 오래걸림+동기화인됨
+			// 이렇게하면 DB들어갈껀 서버에서 들어가고 화면나올껀 클라이에서 나올듯,동기화 안됨!!! 
+				var output = '';
+				output += '<li>';
+				output += '	<h3>'+ Author + '</h3>'; 
+				output += ' <p>'+ data.message +'</p>';
+				output += '	<p>'+ data.date +'</p>';
+				output += '</li>';
+				$(output).prependTo('#content');
+		});
+
+		$('button').click(function(){
+			if(this.id=="write"){
+				//클라이언트의 시간을 mysql에 맞추어 바꾼다.
+				var date = new Date();
+
+				var DATE = date.getUTCFullYear() + '-' 
+                + ('00' + (date.getUTCMonth()+1)).slice(-2) + '-' 
+                + date.getUTCDate() + ' '
+                + ('00' + date.getUTCHours()).slice(-2) + ':' 
+                + ('00' + date.getUTCMinutes()).slice(-2) + ':' 
+                + ('00' + date.getUTCSeconds()).slice(-2);
+
+				socket.emit('message',{
+					message: $('#message').val(),
+					date: DATE
+				});
+			}
+			else if(this.id=="logout"){
+				location.replace("/logout"); 
+			}
+		});
+		
+	});
+	</script>
+</head>
+<body>
+	<h1>TorchBox</h1>
+	<p>Seriously. It is a waste of time.</p>
+	<button id ="logout">Logout</button>
+	<hr/>
+	<input id = "message"/>
+	<button id ="write">Write</button>
+	<ul id = "content">
+	</ul>
+</body>
+</html>
