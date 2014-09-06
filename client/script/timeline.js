@@ -1,4 +1,4 @@
-
+ï»¿
 $( document ).ready( function() {
 
 
@@ -31,7 +31,7 @@ $( document ).ready( function() {
 		var evKey = ev.which;
 		// keycode list http://blog.outsider.ne.kr/322
 		
-		// n : »õ ±Û ÀÛ¼º
+		// n : ìƒˆ ê¸€ ìž‘ì„±
 		switch (evKey) {
 			case 78 : {
 				if ( !($('input#nav_write').is(':checked'))  ) {
@@ -45,7 +45,7 @@ $( document ).ready( function() {
 			case 27 : {
 				// escape input box
 				if ( ($('input#nav_write').is(':checked'))  ) {
-					//console.log('out');
+					console.log('out');
 					$('input#nav_write').prop('checked', false);
 					$('input#nav_write').trigger('change');
 				}
