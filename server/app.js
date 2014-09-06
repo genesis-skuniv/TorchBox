@@ -29,7 +29,7 @@ app.get('/', function (request, response) {
     
     if(request.cookies.auth){//인증된 쿠키가 있다면 채팅
         //socket.io 부분
-        fs.readFile('./client/index.html',function (error, data){
+        fs.readFile('index.html',function (error, data){
             response.writeHead(200, {'Content-Type' : 'text/html'});
             response.end(data);
         });
@@ -58,7 +58,7 @@ app.get('/', function (request, response) {
 
 //로그인 
 app.get('/login', function (request, response) {
-    fs.readFile('./client/login.html',function (error,data){
+    fs.readFile('login.html',function (error,data){
         response.send(data.toString());
     });
 });
@@ -100,7 +100,7 @@ app.get('/logout',function (request, response){
 });
 //계정 등록
 app.get('/signup',function (request, response){
-    fs.readFile('./client/signup.html',function (error, data){
+    fs.readFile('signup.html',function (error, data){
         response.writeHead(200, {'Content-Type' : 'text/html'});
         response.end(data);
     });
