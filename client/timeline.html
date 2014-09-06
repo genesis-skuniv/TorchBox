@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<link href="style/timeline.css" rel="stylesheet" type="text/css" />
+	<script src="script/jquery-2.1.1.min.js"></script>
+	<script src="script/timeline.js"></script>
+</head>
+<body>
+	<!-- navigation -->
+	<!-- http://jsfiddle.net/davidelrizzo/DYJkG/ -->
+	<div id = "nav">
+		<input type = "checkbox" id = "nav_settings" class="toggleButton" />
+		<label for="nav_settings">		
+		설정
+		</label>
+
+		<input type = "checkbox" id = "nav_write" class="toggleButton" />
+		<label for="nav_write">
+		쓰기
+		</label>
+	</div>
+	
+	<!-- input area -->
+	<div id = "inputArea">
+		<form action = "" method = "post">
+			<textarea rows = "5" name = "content" placeholder = "지금 무슨 일을 하고있나요?"></textarea>
+			<button type="submit">전송</button>
+		</form>
+	</div>
+	
+	<!-- timeline -->
+	<div id = "timeline_container">
+		<div class = "timeline">
+			<ul class>
+				<li class = "notice">
+					<div class = "avatar">
+						<img class = "avatar" src="res/icon.png"/>
+					</div> <!-- avatar end -->
+					<div class = "entry">
+						<p class="desc">
+							<span class = "name">Torchbox</span>
+							<span class = "userid">@Torchbox</span>
+							<span class =  "time">1달전</span>
+						</p>
+						<p class = "article">
+							Torchbox에 오신것을 진심으로 환영합니다!
+						</p>
+					</div> <!-- entry end -->
+				</li>
+								<li class = "notice">
+					<div class = "avatar">
+						<img class = "avatar" src="res/icon.png"/>
+					</div> <!-- avatar end -->
+					<div class = "entry">
+						<p class="desc">
+							<span class = "name">Torchbox</span>
+							<span class = "userid">@Torchbox</span>
+							<span class = "time">2시간전</span>
+						</p>
+						<p class = "article">
+							Torchbox에 오신것을 진심으로 환영합니다!
+						</p>
+					</div> <!-- entry end -->
+				</li>
+			</ul>
+		</div><!-- default timeline end -->
+	</div> <!-- timeline container end -->
+</body>
+</html>
