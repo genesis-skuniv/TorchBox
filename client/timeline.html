@@ -9,22 +9,27 @@
 	<!-- navigation -->
 	<!-- http://jsfiddle.net/davidelrizzo/DYJkG/ -->
 	<div id = "nav">
-		<input type = "checkbox" id = "nav_settings" class="toggleButton" />
+		<input type = "checkbox" id = "nav_settings"/>
 		<label for="nav_settings">		
 		설정
 		</label>
 
-		<input type = "checkbox" id = "nav_write" class="toggleButton" />
+		<input type = "checkbox" id = "nav_write"/>
 		<label for="nav_write">
 		쓰기
 		</label>
+		<input type = "checkbox" id = "nav_help"/>
+		<label for="nav_help">
+		?
+		</label>
+		<input type = "button" id = "nav_logout" value="로그아웃"/>
 	</div>
 	
 	<!-- input area -->
 	<div id = "inputArea">
 		<form action = "" method = "post">
 			<textarea rows = "5" name = "content" placeholder = "지금 무슨 일을 하고있나요?"></textarea>
-			<button type="submit">전송</button>
+			<input type="button" value="전송" />
 		</form>
 	</div>
 	

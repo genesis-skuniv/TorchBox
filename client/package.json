@@ -1,5 +1,5 @@
 {
-  "main": "index.html",
+  "main": "timeline.html",
   "name": "torchbox-client",
   "description": "Torchbox messenger client",
   "single-instance": true,
