@@ -45,7 +45,7 @@ $( document ).ready( function() {
 			case 27 : {
 				// escape input box
 				if ( ($('input#nav_write').is(':checked'))  ) {
-					console.log('out');
+					//console.log('out');
 					$('input#nav_write').prop('checked', false);
 					$('input#nav_write').trigger('change');
 				}
