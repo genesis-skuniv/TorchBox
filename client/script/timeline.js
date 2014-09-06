@@ -30,10 +30,8 @@ $( document ).ready( function() {
 	$( document ).keyup( function(ev) {
 		var evKey = ev.which;
 		// keycode list http://blog.outsider.ne.kr/322
-		//console.log(ev.which);
 		
 		// n : 새 글 작성
-		console.log(evKey);
 		switch (evKey) {
 			case 78 : {
 				if ( !($('input#nav_write').is(':checked'))  ) {
